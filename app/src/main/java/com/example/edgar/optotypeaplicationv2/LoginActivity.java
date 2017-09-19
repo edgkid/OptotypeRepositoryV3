@@ -40,14 +40,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
 
-        String resourceUser = "users/"+editTextUserName.getText().toString() + "," + editTextPaswword.getText().toString();
+        //Comentario para trabajar local en la oficina
+       /* String resourceUser = "users/"+editTextUserName.getText().toString() + "," + editTextPaswword.getText().toString();
         RequestUser requestUser = new RequestUser(resourceUser, this);
 
         if (requestUser.findUserOnSystem()){
             callNewActivity();
         }else{
             Toast.makeText(this, "Problemas de conexion, imposible ingresar", Toast.LENGTH_SHORT).show();
-        }
+        }*/
+
+        callNewActivity();
 
     }
 
