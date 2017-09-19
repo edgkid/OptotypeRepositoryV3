@@ -1,5 +1,7 @@
 package com.example.edgar.optotypeaplicationv2;
 
+import android.content.res.Resources;
+
 /**
  * Created by Edgar on 10/09/2017.
  */
