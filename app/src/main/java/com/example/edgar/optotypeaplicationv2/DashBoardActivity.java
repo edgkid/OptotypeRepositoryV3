@@ -83,17 +83,20 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
      */
     public void loadListPatientsToday (){
 
+        //Listado de pacientes genericos para trabajar en la oficina
         PatientsToday patiensData[] = new PatientsToday[]{
                 new PatientsToday("edgar","4",R.drawable.usuario_icon),
                 new PatientsToday("Gabriel","4",R.drawable.usuario_icon),
                 new PatientsToday("Juan","4",R.drawable.usuario_icon),
         };
+        ///////////////////////////////////////////// - Bloque a borar
 
         PatientsTodayAdapter patientsAdapter = new PatientsTodayAdapter(this,R.layout.listview_item_patients_today_row, patiensData);
         listViewMenu.setAdapter(patientsAdapter);
 
-        RequestPatient reuquestPatient = new RequestPatient("patients", this);
-        reuquestPatient.findPatientsToDay();
+        //Listado de pacieste desde la base de datos
+        /*RequestPatient reuquestPatient = new RequestPatient("patients", this);
+        reuquestPatient.findPatientsToDay();*/
 
     }
 
