@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -102,6 +103,28 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         //Listado de pacieste desde la base de datos
         /*RequestPatient reuquestPatient = new RequestPatient("patients", this);
         reuquestPatient.findPatientsToDay();*/
+
+        callInteractionActivityByPatient ();
+
+    }
+
+    public void callInteractionActivityByPatient (){
+
+        listViewMenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                PatientsToday patient = new PatientsToday();
+
+                TextView textName = (TextView)view.findViewById(R.id.namePatientToday);
+                patient.setName(textName.getText().toString());
+                TextView textyears= (TextView)view.findViewById(R.id.yearsOldPatientToday);
+                patient.setYearsOld(textyears.getText().toString());
+                ImageView photo = (ImageView)findViewById(R.id.photoPatientToday);
+                patient.setPhoto(photo.getId());
+                String paciente = patient.getName() + " " + patient.getYearsOld() + " " + patient.getPhoto();
+                Toast.makeText(getApplicationContext(), paciente ,Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
