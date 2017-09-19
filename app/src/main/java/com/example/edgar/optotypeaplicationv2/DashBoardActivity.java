@@ -67,14 +67,19 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
      * This method fill a Listview with option for user or list the patients
      */
     public void loadMenu(){
-        SharedPreferences preferences = getSharedPreferences("LoginPreferences", Context.MODE_PRIVATE);
+
+        // Comentario para trabajar local desde la oficina
+        /*SharedPreferences preferences = getSharedPreferences("LoginPreferences", Context.MODE_PRIVATE);
 
         if (preferences.getString("roll", "defaultroll").equals("Doctor")){
             ArrayAdapter<String> adapterMenuDoctor = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1, menuDoctor);
             listViewMenu.setAdapter(adapterMenuDoctor);
         }else if(preferences.getString("roll", "defaultroll").equals("Paciente Infantil")){
             loadListPatientsToday();
-        }
+        }*/
+
+        // linea temporal para trabajar en la oficina
+        loadListPatientsToday();
 
     }
 
